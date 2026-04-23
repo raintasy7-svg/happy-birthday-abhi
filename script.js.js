@@ -160,23 +160,23 @@ function openGift() {
 
 const photoData = [
     {
-        src: 'photo1.jpg',
+        src: 'photo1.jpg.jpg',
         caption: 'Where it all started 💙'
     },
     {
-        src: 'photo2.jpg',
+        src: 'photo3.jpg.jpg',
         caption: 'Our crazy adventures 😂'
     },
     {
-        src: 'photo3.jpg',
+        src: 'photo4.jpg.jpg',
         caption: 'Best memories ever ✨'
     },
     {
-        src: 'photo4.jpg',
+        src: 'photo5.jpg.jpg',
         caption: 'Distance means nothing 🌍💙'
     },
     {
-        src: 'photo5.jpg',
+        src: 'photo6.jpg.jpg',
         caption: 'Forever & always 🤍'
     }
 ];
