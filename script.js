@@ -1,16 +1,13 @@
-// ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
     createStars();
     createFloatingHearts();
     initPhotos();
 
-    // Enter key for password
     document.getElementById('passwordInput').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') checkPassword();
     });
 });
 
-// ===== STARS BACKGROUND =====
 function createStars() {
     for (let i = 1; i <= 5; i++) {
         const container = document.getElementById('stars' + i);
@@ -30,7 +27,6 @@ function createStars() {
     }
 }
 
-// ===== FLOATING HEARTS =====
 function createFloatingHearts() {
     const container = document.getElementById('floatingHearts');
     const hearts = ['💙', '🤍', '💜', '✨', '⭐', '🦋'];
@@ -47,7 +43,6 @@ function createFloatingHearts() {
     }
 }
 
-// ===== PASSWORD =====
 function checkPassword() {
     const input = document.getElementById('passwordInput');
     const password = input.value.toLowerCase().trim();
@@ -81,7 +76,6 @@ function togglePassword() {
     }
 }
 
-// ===== PAGE NAVIGATION =====
 function goToPage(pageNum) {
     const pages = document.querySelectorAll('.page');
 
@@ -105,7 +99,6 @@ function goToPage(pageNum) {
         }, 800);
 
         if (pageNum === 2) {
-            // Reset candles
             candlesBlown = 0;
             for (let i = 0; i < 5; i++) {
                 const flame = document.getElementById('flame' + i);
@@ -124,7 +117,6 @@ function goToPage(pageNum) {
     }, 500);
 }
 
-// ===== CANDLE BLOWING =====
 let candlesBlown = 0;
 
 function blowCandle(candle, index) {
@@ -143,7 +135,6 @@ function blowCandle(candle, index) {
     }
 }
 
-// ===== ENVELOPE =====
 function openEnvelope() {
     const envelope = document.getElementById('envelope');
     const flap = envelope.querySelector('.envelope-flap');
@@ -156,7 +147,6 @@ function openEnvelope() {
     }, 600);
 }
 
-// ===== GIFT =====
 function openGift() {
     const lid = document.getElementById('giftLid');
     lid.classList.add('opened');
@@ -168,36 +158,25 @@ function openGift() {
     }, 800);
 }
 
-// ===== PHOTOS =====
-/* 
-    INSTRUCTIONS FOR ADDING YOUR PHOTOS:
-    
-    1. In your GitHub repository, create a folder called "photos"
-    2. Upload your photos there (name them photo1.jpg, photo2.jpg, etc.)
-    3. Update the photoData array below with correct paths and captions
-    
-    OR use direct image URLs if hosted elsewhere
-*/
-
 const photoData = [
     {
-        src: 'photo1.jpg',
+        src: 'photo1.jpg.jpg',
         caption: 'Where it all started 💙'
     },
     {
-        src: 'photo2.jpg',
+        src: 'photo3.jpg.jpg',
         caption: 'Our crazy adventures 😂'
     },
     {
-        src: 'photo3.jpg',
+        src: 'photo4.jpg.jpg',
         caption: 'Best memories ever ✨'
     },
     {
-        src: 'photo4.jpg',
+        src: 'photo5.jpg.jpg',
         caption: 'Distance means nothing 🌍💙'
     },
     {
-        src: 'photo5.jpg',
+        src: 'photo6.jpg.jpg',
         caption: 'Forever & always 🤍'
     }
 ];
@@ -234,7 +213,6 @@ function prevPhoto() {
     updatePhoto();
 }
 
-// ===== CONFETTI =====
 function launchConfetti() {
     const canvas = document.getElementById('confettiCanvas');
     const ctx = canvas.getContext('2d');
@@ -290,7 +268,6 @@ function launchConfetti() {
     animate();
 }
 
-// Handle window resize for confetti canvas
 window.addEventListener('resize', function() {
     const canvas = document.getElementById('confettiCanvas');
     canvas.width = window.innerWidth;
