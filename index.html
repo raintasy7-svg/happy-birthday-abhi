@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Abhi 🤍</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&family=Sacramento&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- FLOATING HEARTS BACKGROUND -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- PAGE 1: PASSWORD -->
+    <div class="page active" id="page1">
+        <div class="stars-container" id="stars1"></div>
+        <div class="password-container">
+            <div class="lock-icon" id="lockIcon">🔒</div>
+            <h1 class="glowing-text">Someone Special's Birthday</h1>
+            <p class="subtitle-hint">✨ A little surprise awaits... ✨</p>
+            <div class="password-box">
+                <label class="hint-label">💡 Hint: "My Sautan"</label>
+                <div class="input-wrapper">
+                    <input type="password" id="passwordInput" placeholder="Enter the password..." autocomplete="off">
+                    <button class="eye-btn" id="eyeBtn" onclick="togglePassword()">👁️</button>
+                </div>
+                <button class="unlock-btn" onclick="checkPassword()">
+                    <span>Open Your Surprise</span>
+                    <div class="btn-sparkle"></div>
+                </button>
+                <p class="error-msg" id="errorMsg"></p>
+            </div>
+            <div class="password-footer">
+                <p>Made with 💙 by someone who loves you</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: CANDLE BLOWING -->
+    <div class="page" id="page2">
+        <div class="stars-container" id="stars2"></div>
+        <div class="candle-page">
+            <h1 class="birthday-title">Happy 21st Birthday!</h1>
+            <p class="blow-instruction" id="blowText">🎂 Tap each candle to blow it out! 🎂</p>
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="cake-top">
+                        <div class="candles-row">
+                            <div class="candle" onclick="blowCandle(this, 0)">
+                                <div class="flame" id="flame0">
+                                    <div class="flame-inner"></div>
+                                </div>
+                                <div class="candle-body"></div>
+                            </div>
+                            <div class="candle" onclick="blowCandle(this, 1)">
+                                <div class="flame" id="flame1">
+                                    <div class="flame-inner"></div>
+                                </div>
+                                <div class="candle-body"></div>
+                            </div>
+                            <div class="candle" onclick="blowCandle(this, 2)">
+                                <div class="flame" id="flame2">
+                                    <div class="flame-inner"></div>
+                                </div>
+                                <div class="candle-body"></div>
+                            </div>
+                            <div class="candle" onclick="blowCandle(this, 3)">
+                                <div class="flame" id="flame3">
+                                    <div class="flame-inner"></div>
+                                </div>
+                                <div class="candle-body"></div>
+                            </div>
+                            <div class="candle" onclick="blowCandle(this, 4)">
+                                <div class="flame" id="flame4">
+                                    <div class="flame-inner"></div>
+                                </div>
+                                <div class="candle-body"></div>
+                            </div>
+                        </div>
+                        <div class="age-text">21</div>
+                    </div>
+                    <div class="cake-layer layer1">
+                        <div class="cake-drip"></div>
+                        <div class="cake-drip"></div>
+                        <div class="cake-drip"></div>
+                    </div>
+                    <div class="cake-layer layer2"></div>
+                    <div class="cake-layer layer3"></div>
+                    <div class="cake-plate"></div>
+                </div>
+            </div>
+            <div class="wish-prompt" id="wishPrompt" style="display:none;">
+                <p class="make-wish">✨ Make a wish, Abhi! ✨</p>
+                <button class="next-btn wish-btn" onclick="goToPage(3)">
+                    I made my wish! 💫
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: LETTER -->
+    <div class="page" id="page3">
+        <div class="stars-container" id="stars3"></div>
+        <div class="letter-page">
+            <div class="envelope" id="envelope" onclick="openEnvelope()">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <p>💌 Tap to open</p>
+                </div>
+            </div>
+            <div class="letter-content" id="letterContent" style="display:none;">
+                <div class="letter-paper">
+                    <h2 class="letter-greeting">Happy Birthday 🤍</h2>
+                    <div class="letter-text">
+                        <p>It's crazy how many years it's been since school. Sometimes I randomly think about those days — the corridors, our stupid jokes, the way we used to laugh at literally nothing. Those were honestly some of the best days of my life… and it's because you were there.</p>
+
+                        <p>Even now, with you in Kemerovo and me in Kursk, it still feels like you're such a big part of my everyday life. Distance is annoying, but it doesn't change what you mean to me.</p>
+
+                        <p>I miss you. I really do.</p>
+
+                        <p>And just so you remember — <strong>I'm still your No. 1.</strong><br>
+                        Everyone else is respectfully No. 2. 😌 <em>(no arguments allowed)</em></p>
+
+                        <p>I hope this year makes you happy, calm, loved, and proud of yourself. You deserve all the good things, Honey.</p>
+
+                        <p>Thank you for being you.<br>
+                        Always.</p>
+                    </div>
+                    <div class="letter-signature">— Raina 💙</div>
+                </div>
+                <button class="next-btn" onclick="goToPage(4)">See Your Gift 🎁</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: GIFT -->
+    <div class="page" id="page4">
+        <div class="stars-container" id="stars4"></div>
+        <div class="gift-page">
+            <div class="gift-box-wrapper" id="giftWrapper" onclick="openGift()">
+                <div class="gift-box" id="giftBox">
+                    <div class="gift-lid" id="giftLid">
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-base">
+                        <div class="gift-ribbon-v"></div>
+                        <div class="gift-ribbon-h"></div>
+                    </div>
+                </div>
+                <p class="tap-gift">🎁 Tap to unwrap!</p>
+            </div>
+            <div class="gift-reveal" id="giftReveal" style="display:none;">
+                <h1 class="surprise-text">🎉 Surprise!!!</h1>
+                <div class="gift-card">
+                    <h2>Your gift is…</h2>
+                    <p class="gift-main">A lifetime membership of me being your <span class="highlight">No.1</span> 😌💙</p>
+                    <div class="gift-terms">
+                        <p>No refunds. No exchanges.</p>
+                        <p>You're stuck with me forever. 🤷‍♀️💙</p>
+                    </div>
+                    <div class="membership-card">
+                        <div class="card-header">✦ VIP MEMBERSHIP ✦</div>
+                        <div class="card-body-content">
+                            <p class="card-name">Abhilasha</p>
+                            <p class="card-title">Holder of Raina's #1 Spot</p>
+                            <p class="card-validity">Valid: Forever & Always 💙</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="goToPage(5)">See Our Memories 📸</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5: PHOTOS -->
+    <div class="page" id="page5">
+        <div class="stars-container" id="stars5"></div>
+        <div class="photos-page">
+            <h1 class="photos-title">Our Memories Together 💙</h1>
+            <p class="photos-subtitle">Every moment with you is a treasure ✨</p>
+            <div class="photos-slideshow">
+                <div class="photo-frame" id="photoFrame">
+                    <img id="slideshowImg" src="" alt="Our memories">
+                    <div class="photo-caption" id="photoCaption"></div>
+                </div>
+                <div class="slideshow-controls">
+                    <button class="slide-btn" onclick="prevPhoto()">←</button>
+                    <span class="photo-counter" id="photoCounter">1 / 5</span>
+                    <button class="slide-btn" onclick="nextPhoto()">→</button>
+                </div>
+            </div>
+            <div class="final-message">
+                <p>Here's to 21 and beyond! 🥂</p>
+                <p class="forever-text">Friends forever, no matter the distance 💙</p>
+                <p class="credits">Made with all my love — Raina 🤍</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFETTI CANVAS -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundjay.com/human/sounds/applause-01.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
